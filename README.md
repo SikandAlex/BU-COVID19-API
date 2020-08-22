@@ -1,3 +1,13 @@
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/15/Boston_University_Terriers_logo.svg/1200px-Boston_University_Terriers_logo.svg.png" width="300" />
+</p>
+
+<p align="center">
+  <a href="#">
+    <img src="https://img.shields.io/badge/made%20with-love-E760A4.svg" alt="Made with love">
+  </a>
+</p>
+
 # Boston University COVID-19 API
 https://bu-covid19-api.herokuapp.com
 
