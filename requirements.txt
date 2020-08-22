@@ -7,7 +7,7 @@ idna==2.10
 itsdangerous==1.1.0
 Jinja2==2.11.2
 MarkupSafe==1.1.1
-python-firebase==1.2.1
+python-firebase @ git+https://github.com/ozgur/python-firebase@0d79d7609844569ea1cec4ac71cb9038e834c355
 requests==2.24.0
 selenium==3.141.0
 urllib3==1.25.10
