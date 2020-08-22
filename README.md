@@ -8,9 +8,9 @@
   </a>
 </p>
 
-# Created by Alex Sikand
+Created by Alex Sikand, MS in Artificial Intelligence Candidate 
 
-## API!
+## Base API 
 https://bu-covid19-api.herokuapp.com
 
 ## Get current statistics
