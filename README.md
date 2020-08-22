@@ -8,7 +8,9 @@
   </a>
 </p>
 
-# Boston University COVID-19 API
+# Created by Alex Sikand
+
+## API!
 https://bu-covid19-api.herokuapp.com
 
 ## Get current statistics
