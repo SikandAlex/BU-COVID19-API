@@ -44,7 +44,7 @@ https://bu-covid19-api.herokuapp.com
 `GET /date/:day`
 
 Date format example: 8-20-20
-`GET /date/:8-20-20`
+`GET /date/8-20-20`
 
 ```json
 {
