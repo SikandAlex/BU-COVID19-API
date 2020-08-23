@@ -3,6 +3,8 @@ from flask import Flask
 from flask_restful import Api, Resource, reqparse
 from apscheduler.schedulers.background import BackgroundScheduler
 
+import json
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -23,7 +25,7 @@ app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 
 # Schedule the data update
 sched = BackgroundScheduler(daemon=True)
-sched.add_job(update_data,'interval',minutes=1)
+sched.add_job(update_data,'interval',minutes=15)
 sched.start()
 
 @app.route("/home", methods=['GET'])
@@ -37,7 +39,10 @@ def current():
 
 @app.route('/date/<date>', methods=['GET'])
 def info_for_date(date):
-    result = firebase_app.get('/reporting', date)
+    result = firebase_app.get('/reporting', '').items()
+    for r in result:
+        #print('\n')
+        #print(r[1]["Daily"]["Positive"])
     return result
 
 if __name__ == "__main__":
