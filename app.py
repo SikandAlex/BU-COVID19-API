@@ -38,7 +38,7 @@ def current():
     return result
 
 @app.route('/historical', methods=['GET'])
-def get_historical(date):
+def get_historical():
     result = firebase_app.get('/reporting', '')#.items()
     return result
 
