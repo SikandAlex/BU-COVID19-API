@@ -13,24 +13,26 @@ from selenium.common.exceptions import TimeoutException
 
 from selenium.webdriver.chrome.options import Options
 
-GOOGLE_CHROME_PATH = '/app/.apt/usr/bin/google-chrome'
-CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
+#GOOGLE_CHROME_PATH = '/app/.apt/usr/bin/google-chrome'
+#CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
 
 
 chrome_options = Options()
 chrome_options.add_argument("--headless")
-chrome_options.binary_location = GOOGLE_CHROME_PATH
+#chrome_options.binary_location = GOOGLE_CHROME_PATH
 
 
 def update_data():
     # Get a chrome webdriver (on Mac OSX 'brew cask install chromedriver')
-    driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, options=chrome_options)
+    driver = webdriver.Chrome(executable_path='chromedriver', options=chrome_options)
     # Get the webpage for the direct PowerBI visualization from Boston University
     driver.get('https://app.powerbi.com/view?r=eyJrIjoiMzI4OTBlMzgtODg5MC00OGEwLThlMDItNGJiNDdjMDU5ODhkIiwidCI6ImQ1N2QzMmNjLWMxMjEtNDg4Zi1iMDdiLWRmZTcwNTY4MGM3MSIsImMiOjN9')
     driver.implicitly_wait(10)
 
     # Current date
-    current_date = driver.find_elements(By.CLASS_NAME, 'column')[6].get_attribute('aria-label').split(" ")[2].replace(".", '')
+    current_date = driver.find_elements(By.CLASS_NAME, 'column')[-1].get_attribute('aria-label').split(" ")[2].replace(".", '')
+    print("Current Date")
+    print(current_date)
     date = current_date.replace('/', '-')
     date_ts = time.mktime(datetime.datetime.strptime(date, "%m-%d-%y").timetuple())
 

@@ -39,10 +39,7 @@ def current():
 
 @app.route('/date/<date>', methods=['GET'])
 def info_for_date(date):
-    result = firebase_app.get('/reporting', '').items()
-    for r in result:
-        #print('\n')
-        #print(r[1]["Daily"]["Positive"])
+    result = firebase_app.get('/reporting', '')#.items()
     return result
 
 if __name__ == "__main__":
