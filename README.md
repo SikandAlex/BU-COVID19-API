@@ -13,6 +13,10 @@ Created by Alex Sikand, MS in Artificial Intelligence Candidate
 ## Base API 
 https://bu-covid19-api.herokuapp.com
 
+## Why are some statistics missing from the early data?
+I began capturing additional data starting 8-21-20. Testing days before this date will lack certain metrics such as
+'Isolated' etc.
+
 ## Get current statistics
 `GET /current`
 ```json
@@ -130,7 +134,7 @@ https://bu-covid19-api.herokuapp.com
 ```
 
 ## Files 
-### data_fetcher
+### data_fetcher.py
 
 1) Selenium + Headless Chromedriver scrapes data from PowerBI visualization available here: https://www.bu.edu/healthway/community-dashboard/
 2) Uploads to Firebase Realtime Database 
