@@ -40,22 +40,93 @@ https://bu-covid19-api.herokuapp.com
 }
 ```
 
-## Get data for a specific day
-`GET /date/:day`
-
-Date format example: 8-20-20
-`GET /date/8-20-20`
+## Get all testing data
+`GET /historical`
 
 ```json
 {
-  "Daily": {
-    "Date": "8-20-20", 
-    "Date_TS": 1597896000.0, 
-    "Invalid": 4, 
-    "Negative": 1410, 
-    "Positive": 0
+  "8-15-20": {
+    "Daily": {
+      "Date": "8-15-20", 
+      "Date_TS": 1597464000.0, 
+      "Invalid": 17, 
+      "Negative": 1000, 
+      "Positive": 2, 
+      "Total": 1019
+    }
+  }, 
+  "8-16-20": {
+    "Daily": {
+      "Date": "8/16/20", 
+      "Date_TS": 1597550400.0, 
+      "Invalid": 0, 
+      "Negative": 285, 
+      "Positive": 1, 
+      "Total": 286
+    }
+  }, 
+  "8-17-20": {
+    "Daily": {
+      "Date": "8/17/20", 
+      "Date_TS": 1597636800.0, 
+      "Invalid": 13, 
+      "Negative": 1069, 
+      "Positive": 4, 
+      "Total": 1086
+    }
+  }, 
+  "8-18-20": {
+    "Daily": {
+      "Date": "8/18/20", 
+      "Date_TS": 1597723200.0, 
+      "Invalid": 11, 
+      "Negative": 950, 
+      "Positive": 4, 
+      "Total": 965
+    }
+  }, 
+  "8-19-20": {
+    "Daily": {
+      "Date": "8/19/20", 
+      "Date_TS": 1597809600.0, 
+      "Invalid": 7, 
+      "Negative": 1443, 
+      "Positive": 0, 
+      "Total": 1450
+    }
+  }, 
+  "8-20-20": {
+    "Daily": {
+      "Date": "8-20-20", 
+      "Date_TS": 1597896000.0, 
+      "Invalid": 4, 
+      "Negative": 1410, 
+      "Positive": 0, 
+      "Total": 1414
+    }
+  }, 
+  "8-21-20": {
+    "Cumulative": {
+      "Invalid": 143, 
+      "Negative": 11585, 
+      "Positive": 19, 
+      "Processing Time": 25.4, 
+      "Total": 11747
+    }, 
+    "Daily": {
+      "Date": "8-21-20", 
+      "Date_TS": 1597968000.0, 
+      "Date_Verbose": "August 21, 2020", 
+      "Invalid": 10, 
+      "Isolated": 16, 
+      "Negative": 1443, 
+      "Non-Contagious": 1, 
+      "Positive": 3, 
+      "Processing Time": 23.1, 
+      "Recovered": 2, 
+      "Total": 1456
+    }
   }
-}
 ```
 
 ## Files 
