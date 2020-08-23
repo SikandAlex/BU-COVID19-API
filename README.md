@@ -18,6 +18,7 @@ I began capturing additional data starting 8-21-20. Testing days before this dat
 'Isolated' etc.
 
 ## Get current statistics
+https://bu-covid19-api.herokuapp.com/current
 `GET /current`
 ```json
 {
@@ -45,6 +46,7 @@ I began capturing additional data starting 8-21-20. Testing days before this dat
 ```
 
 ## Get all testing data
+https://bu-covid19-api.herokuapp.com/historical
 `GET /historical`
 
 ```json
@@ -142,4 +144,4 @@ I began capturing additional data starting 8-21-20. Testing days before this dat
 ### app.py 
 
 Flask API/web server
-runs data_fetcher.py every 30 minutes in the background 
+runs data_fetcher.py every 15 minutes in the background 
