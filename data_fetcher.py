@@ -13,7 +13,7 @@ from selenium.common.exceptions import TimeoutException
 
 from selenium.webdriver.chrome.options import Options
 
-GOOGLE_CHROME_PATH = '/app/.apt/usr/bin/google_chrome'
+GOOGLE_CHROME_PATH = '/app/.apt/usr/bin/google-chrome'
 CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
 
 
