@@ -13,12 +13,18 @@ from selenium.common.exceptions import TimeoutException
 
 from selenium.webdriver.chrome.options import Options
 
+GOOGLE_CHROME_PATH = '/app/.apt/usr/bin/google_chrome'
+CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
+
+
 chrome_options = Options()
 chrome_options.add_argument("--headless")
+chrome_options.binary_location = GOOGLE_CHROME_PATH
+
 
 def update_data():
     # Get a chrome webdriver (on Mac OSX 'brew cask install chromedriver')
-    driver = webdriver.Chrome(executable_path='chromedriver', options=chrome_options)
+    driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, options=chrome_options)
     # Get the webpage for the direct PowerBI visualization from Boston University
     driver.get('https://app.powerbi.com/view?r=eyJrIjoiMzI4OTBlMzgtODg5MC00OGEwLThlMDItNGJiNDdjMDU5ODhkIiwidCI6ImQ1N2QzMmNjLWMxMjEtNDg4Zi1iMDdiLWRmZTcwNTY4MGM3MSIsImMiOjN9')
     driver.implicitly_wait(10)
