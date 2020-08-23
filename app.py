@@ -34,11 +34,11 @@ def home():
 
 @app.route("/current", methods=['GET'])
 def current():
-    result = firebase_app.get('/reporting', 'current')
+    result = firebase_app.get('/current', 'current')
     return result
 
-@app.route('/date/<date>', methods=['GET'])
-def info_for_date(date):
+@app.route('/historical', methods=['GET'])
+def get_historical(date):
     result = firebase_app.get('/reporting', '')#.items()
     return result
 
