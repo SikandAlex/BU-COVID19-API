@@ -37,9 +37,19 @@ def current():
     result = firebase_app.get('/current', 'current')
     return result
 
-@app.route('/historical', methods=['GET'])
-def get_historical():
-    result = firebase_app.get('/reporting', '')#.items()
+@app.route('/historicalItems', methods=['GET'])
+def get_historicalItems():
+    result = firebase_app.get('/reporting', '').items()
+    return result
+
+@app.route('/historicalNormal', methods=['GET'])
+def get_historicalNormal():
+    result = firebase_app.get('/reporting', '')
+    return result
+
+@app.route('/historicalValues', methods=['GET'])
+def get_historicalValues():
+    result = firebase_app.get('/reporting', '').values()
     return result
 
 if __name__ == "__main__":
