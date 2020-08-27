@@ -11,6 +11,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.chrome.options import Options
+from chromedriver_py import binary_path # this will get you the path variable
 
 chrome_binary = os.getenv('GOOGLE_CHROME_SHIM')
 print("ENVIRONMENT VARIABLE")
@@ -29,7 +30,7 @@ chrome_options.binary_location = GOOGLE_CHROME_PATH
 
 def update_data():
     # Get a chrome webdriver (on Mac OSX 'brew cask install chromedriver')
-    driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, options=chrome_options)
+    driver = webdriver.Chrome(executable_path=binary_path, options=chrome_options)
     # Get the webpage for the direct PowerBI visualization from Boston University
     driver.get('https://app.powerbi.com/view?r=eyJrIjoiMzI4OTBlMzgtODg5MC00OGEwLThlMDItNGJiNDdjMDU5ODhkIiwidCI6ImQ1N2QzMmNjLWMxMjEtNDg4Zi1iMDdiLWRmZTcwNTY4MGM3MSIsImMiOjN9')
     driver.implicitly_wait(10)

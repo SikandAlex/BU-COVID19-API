@@ -10,7 +10,7 @@ idna==2.10
 itsdangerous==1.1.0
 Jinja2==2.11.2
 MarkupSafe==1.1.1
-python-firebase @ git+https://github.com/ozgur/python-firebase@0d79d7609844569ea1cec4ac71cb9038e834c355
+chromedriver-py==85.0.4183.83
 pytz==2020.1
 requests==2.24.0
 selenium==3.141.0

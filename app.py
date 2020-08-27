@@ -13,7 +13,7 @@ from selenium.common.exceptions import TimeoutException
 
 
 # Custom function to grab new data from Healthway dashboard
-from data_fetcher import update_data
+from data_fetcher import update_data, get_ngx
 
 # Flask Config
 app = Flask(__name__)
@@ -36,6 +36,10 @@ def current():
     with open('data.json') as json_file:
         jsonObj = json.load(json_file)
         return jsonObj["data"][-1]
+
+@app.route("/ngx/<metric>", methods=['GET'])
+def ngx(metric=metric):
+    return get_ngx(metric=metric)
 
 if __name__ == "__main__":
     app.run()
