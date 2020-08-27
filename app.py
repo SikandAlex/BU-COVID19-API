@@ -13,7 +13,7 @@ from selenium.common.exceptions import TimeoutException
 
 
 # Custom function to grab new data from Healthway dashboard
-from data_fetcher import update_data, get_ngx, get_ngx_all, sendMessages
+from data_fetcher import update_data, get_ngx, get_ngx_all
 
 update_data()
 
