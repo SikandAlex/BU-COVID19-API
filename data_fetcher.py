@@ -125,16 +125,12 @@ def update_data():
 
     with open('data.json') as json_file:
         jsonObj = json.load(json_file)
-        jsonObj["data"].append(result)
         current_data = jsonObj["data"][-1]
         if current_data == result:
-            print("Current Data")
-            print(current_data)
-            print("Scraped")
-            print(result)
             print(datetime.datetime.now(tz=eastern), "No Change...")
         else:
             print(datetime.datetime.now(tz=eastern), "New Data Added...")
+            jsonObj["data"].append(result)
             with open('data.json', 'w') as outfile:
                 json.dump(jsonObj, outfile)
             #sendMessages()
