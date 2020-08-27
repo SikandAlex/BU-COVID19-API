@@ -22,7 +22,7 @@ app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 
 # Schedule the data update
 sched = BackgroundScheduler(daemon=True)
-sched.add_job(update_data,'interval',minutes=15)
+sched.add_job(update_data,'interval',minutes=1)
 sched.start()
 
 @app.route("/all", methods=['GET'])
@@ -35,7 +35,6 @@ def all():
 def current():
     with open('data.json') as json_file:
         jsonObj = json.load(json_file)
-        print(jsonObj)
         return jsonObj["data"][-1]
 
 if __name__ == "__main__":
