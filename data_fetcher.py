@@ -126,13 +126,9 @@ def update_data():
     with open('data.json') as json_file:
         jsonObj = json.load(json_file)
         current_data = jsonObj["data"][-1]
-        if current_data == result:
+        if list(current_data.keys())[0] == date:
             print(datetime.datetime.now(tz=eastern), "No Change...")
         else:
-            print("Old")
-            print(current_data)
-            print("New")
-            print(result)
             print(datetime.datetime.now(tz=eastern), "New Data Added...")
             jsonObj["data"].append(result)
             with open('data.json', 'w') as outfile:
