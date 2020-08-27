@@ -129,6 +129,10 @@ def update_data():
         if current_data == result:
             print(datetime.datetime.now(tz=eastern), "No Change...")
         else:
+            print("Old")
+            print(current_data)
+            print("New")
+            print(result)
             print(datetime.datetime.now(tz=eastern), "New Data Added...")
             jsonObj["data"].append(result)
             with open('data.json', 'w') as outfile:
