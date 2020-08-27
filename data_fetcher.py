@@ -132,3 +132,13 @@ def update_data():
             print(datetime.datetime.now(tz=eastern), "New Data Added...")
             with open('data.json', 'w') as outfile:
                 json.dump(jsonObj, outfile)
+
+def get_ngx(metric="Positive"):
+    output_arr = []
+    with open('data.json') as json_file:
+        covid_data = json.load(json_file)
+        for p in covid_data['data']:
+            date = list(p.keys())[0]
+            m = p[date]["Daily"][metric]
+            output_arr.append({"name": date.replace("-", "/"), "value": m})
+        return json.dumps(output_arr)
