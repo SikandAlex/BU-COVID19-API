@@ -22,7 +22,7 @@ app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 
 # Schedule the data update
 sched = BackgroundScheduler(daemon=True)
-sched.add_job(update_data,'interval',minutes=1)
+sched.add_job(update_data,'interval',minutes=15)
 sched.start()
 
 @app.route("/all", methods=['GET'])

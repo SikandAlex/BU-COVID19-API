@@ -13,20 +13,12 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.chrome.options import Options
 from chromedriver_py import binary_path # this will get you the path variable
 
-chrome_binary = os.getenv('GOOGLE_CHROME_SHIM')
-print("ENVIRONMENT VARIABLE")
-print(chrome_binary)
-
-GOOGLE_CHROME_PATH = chrome_binary
-#'/app/.apt/usr/bin/google-chrome'
-CHROMEDRIVER_PATH = os.getenv('WD_CHROMEDRIVER_PATH')
-
 
 chrome_options = Options()
 chrome_options.add_argument("--headless")
 chrome_options.add_argument('--disable-gpu')
 chrome_options.add_argument('--no-sandbox')
-chrome_options.binary_location = GOOGLE_CHROME_PATH
+chrome_options.binary_location = os.getenv('GOOGLE_CHROME_SHIM')
 
 def update_data():
     # Get a chrome webdriver (on Mac OSX 'brew cask install chromedriver')
@@ -37,7 +29,6 @@ def update_data():
 
     # Current date
     current_date = driver.find_elements(By.CLASS_NAME, 'column')[-1].get_attribute('aria-label').split(" ")[2].replace(".", '')
-    print("Current Date")
     date = current_date.replace('/', '-')
     date_ts = time.mktime(datetime.datetime.strptime(date, "%m-%d-%y").timetuple())
 
