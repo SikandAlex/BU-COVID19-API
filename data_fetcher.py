@@ -14,8 +14,6 @@ from selenium.webdriver.chrome.options import Options
 from chromedriver_py import binary_path # this will get you the path variable
 
 import requests
-import pandas, os
-from twilio.rest import Client
 
 def send_sms_notification(to, message_body):
     client = Client(account_sid, auth_token)
