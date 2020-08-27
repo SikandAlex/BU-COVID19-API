@@ -1,4 +1,4 @@
-from firebase import firebase
+
 from flask import Flask, g
 from flask_restful import Api, Resource, reqparse
 from apscheduler.schedulers.background import BackgroundScheduler
