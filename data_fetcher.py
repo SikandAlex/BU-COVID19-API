@@ -13,6 +13,38 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.chrome.options import Options
 from chromedriver_py import binary_path # this will get you the path variable
 
+import requests
+import pandas, os
+from twilio.rest import Client
+
+def send_sms_notification(to, message_body):
+    client = Client(account_sid, auth_token)
+    client.messages.create(to=to,
+                           from_=twilio_number,
+                           body=message_body)
+
+def sendMessages():
+    response = requests.get('https://docs.google.com/spreadsheets/d/1oRcFPlYSlevPyGm_8xeC4S_ZOtkux_wk96aVF-9hOd8/export?format=csv&gid=1622819468')
+    f = open("contactSheet.csv","w")#write mode
+    f.write(response.content.decode('ASCII'))
+    f.close()
+
+    df = pandas.read_csv("contactSheet.csv")
+    contactList = df["What is your phone number?"].to_numpy()
+    df = None
+
+    r = requests.get(url="https://bu-covid19-api.herokuapp.com/current")
+    data = r.json()
+    key1 = list(data.keys())[0]
+    positive = data[key1]["Daily"]["Positive"]
+    isolated = data[key1]["Daily"]["Isolated"]
+
+    msg = "\nBU COVID-19 Tracker\n" + str(positive) + " new positive cases today at BU"
+
+    for c in contactList:
+        send_sms_notification(c, msg)
+
+
 
 chrome_options = Options()
 chrome_options.add_argument("--headless")
@@ -28,7 +60,7 @@ def update_data():
     driver.implicitly_wait(10)
 
     # Current date
-    current_date = driver.find_elements(By.CLASS_NAME, 'column')[-1].get_attribute('aria-label').split(" ")[2].replace(".", '')
+    current_date = driver.find_elements(By.CLASS_NAME, 'column')[-1].get_attribute('aria-label').split(" ")[1].replace(".", '')
     date = current_date.replace('/', '-')
     date_ts = time.mktime(datetime.datetime.strptime(date, "%m-%d-%y").timetuple())
 
@@ -130,6 +162,8 @@ def update_data():
             print(datetime.datetime.now(tz=eastern), "New Data Added...")
             with open('data.json', 'w') as outfile:
                 json.dump(jsonObj, outfile)
+            #sendMessages()
+
 
 def get_ngx(metric="Positive"):
     output_arr = []
@@ -148,20 +182,10 @@ def get_ngx_all():
     total_data = get_ngx(metric="Total")["data"]
     multi = [
         {
-          "name": "Total",
-          "series": total_data
-        },
-        {
           "name": "Positive",
           "series": pos_data
         },
-        {
-          "name": "Invalid",
-          "series": inv_data
-        },
-        {
-          "name": "Negative",
-          "series": neg_data
-        }
     ]
     return {"data": multi}
+
+update_data()

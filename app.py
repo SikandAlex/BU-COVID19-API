@@ -13,7 +13,7 @@ from selenium.common.exceptions import TimeoutException
 
 
 # Custom function to grab new data from Healthway dashboard
-from data_fetcher import update_data, get_ngx, get_ngx_all
+from data_fetcher import update_data, get_ngx, get_ngx_all, sendMessages
 
 # Flask Config
 app = Flask(__name__)
@@ -24,6 +24,8 @@ app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 sched = BackgroundScheduler(daemon=True)
 sched.add_job(update_data,'interval',minutes=15)
 sched.start()
+
+sendMessages()
 
 @app.route("/all", methods=['GET'])
 def all():
