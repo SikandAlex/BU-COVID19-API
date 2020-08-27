@@ -139,4 +139,29 @@ def get_ngx(metric="Positive"):
             date = list(p.keys())[0]
             m = p[date]["Daily"][metric]
             output_arr.append({"name": date.replace("-", "/"), "value": m})
-        return json.dumps(output_arr)
+        return {"data": output_arr}
+
+def get_ngx_all():
+    pos_data = get_ngx(metric="Positive")["data"]
+    neg_data = get_ngx(metric="Negative")["data"]
+    inv_data = get_ngx(metric="Invalid")["data"]
+    total_data = get_ngx(metric="Total")["data"]
+    multi = [
+        {
+          "name": "Total",
+          "series": total_data
+        },
+        {
+          "name": "Positive",
+          "series": pos_data
+        },
+        {
+          "name": "Invalid",
+          "series": inv_data
+        },
+        {
+          "name": "Negative",
+          "series": neg_data
+        }
+    ]
+    return {"data": multi}
