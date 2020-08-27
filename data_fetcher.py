@@ -153,8 +153,20 @@ def get_ngx_all():
     total_data = get_ngx(metric="Total")["data"]
     multi = [
         {
+          "name": "Total",
+          "series": total_data
+        },
+        {
           "name": "Positive",
           "series": pos_data
         },
+        {
+          "name": "Negative",
+          "series": neg_data
+        },
+        {
+          "name": "Invalid",
+          "series": inv_data
+        }
     ]
     return {"data": multi}
