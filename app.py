@@ -27,8 +27,6 @@ sched = BackgroundScheduler(daemon=True)
 sched.add_job(update_data,'interval',minutes=15)
 sched.start()
 
-sendMessages()
-
 @app.route("/all", methods=['GET'])
 def all():
     with open('data.json') as json_file:
