@@ -187,5 +187,3 @@ def get_ngx_all():
         },
     ]
     return {"data": multi}
-
-update_data()

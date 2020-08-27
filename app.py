@@ -15,6 +15,8 @@ from selenium.common.exceptions import TimeoutException
 # Custom function to grab new data from Healthway dashboard
 from data_fetcher import update_data, get_ngx, get_ngx_all, sendMessages
 
+update_data()
+
 # Flask Config
 app = Flask(__name__)
 api = Api(app)
