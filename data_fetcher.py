@@ -1,9 +1,8 @@
-from firebase import firebase
-firebase_url = "https://bu-covid-19-dashboard.firebaseio.com/"
-firebase_app = firebase.FirebaseApplication(firebase_url, None)
-
 import time
 import datetime
+
+import json
+import pytz
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -16,11 +15,11 @@ from selenium.webdriver.chrome.options import Options
 GOOGLE_CHROME_PATH = '/app/.apt/usr/bin/google-chrome'
 CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
 
-
 chrome_options = Options()
 chrome_options.add_argument("--headless")
+chrome_options.add_argument('--disable-gpu')
+chrome_options.add_argument('--no-sandbox')
 chrome_options.binary_location = GOOGLE_CHROME_PATH
-
 
 def update_data():
     # Get a chrome webdriver (on Mac OSX 'brew cask install chromedriver')
@@ -32,7 +31,6 @@ def update_data():
     # Current date
     current_date = driver.find_elements(By.CLASS_NAME, 'column')[-1].get_attribute('aria-label').split(" ")[2].replace(".", '')
     print("Current Date")
-    print(current_date)
     date = current_date.replace('/', '-')
     date_ts = time.mktime(datetime.datetime.strptime(date, "%m-%d-%y").timetuple())
 
@@ -95,7 +93,8 @@ def update_data():
     avg_sample_process_time = float(avg_sample_process_time)
     cum_avg_sample_process_time = float(cum_avg_sample_process_time)
 
-    data =  { 'Daily': {
+    result =  { date: {
+                    'Daily': {
                     'Date_Verbose': verbose_date,
                     'Date_TS': date_ts,
                     'Date': date,
@@ -116,9 +115,20 @@ def update_data():
                     'Processing Time': cum_avg_sample_process_time
                     }
                 }
+            }
 
     driver.quit()
 
-    result = firebase_app.put('/reporting', date, data)
-    current = firebase_app.put('/current', 'current', data)
-    print("LOGGED: ", result)
+    eastern = pytz.timezone('US/Eastern')
+    print(datetime.datetime.now(tz=eastern), "Checking for updates...")
+
+    with open('data.json') as json_file:
+        jsonObj = json.load(json_file)
+        jsonObj["data"].append(result)
+        current_data = jsonObj["data"][-1]
+        if current_data == result:
+            print(datetime.datetime.now(tz=eastern), "No Change...")
+        else:
+            print(datetime.datetime.now(tz=eastern), "New Data Added...")
+            with open('data.json', 'w') as outfile:
+                json.dump(jsonObj, outfile)
