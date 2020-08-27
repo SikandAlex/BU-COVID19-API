@@ -161,12 +161,12 @@ def get_ngx_all():
           "series": pos_data
         },
         {
-          "name": "Negative",
-          "series": neg_data
-        },
-        {
           "name": "Invalid",
           "series": inv_data
+        },
+        {
+          "name": "Negative",
+          "series": neg_data
         }
     ]
     return {"data": multi}
