@@ -37,9 +37,9 @@ def current():
         jsonObj = json.load(json_file)
         return jsonObj["data"][-1]
 
-@app.route("/ngx/<metric>", methods=['GET'])
-def ngx(metric=metric):
-    return get_ngx(metric=metric)
+@app.route("/ngx", methods=['GET'])
+def ngx():
+    return get_ngx(metric="Positive")
 
 if __name__ == "__main__":
     app.run()
