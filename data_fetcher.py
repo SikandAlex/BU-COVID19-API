@@ -4,6 +4,8 @@ import datetime
 import json
 import pytz
 
+import os
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -12,8 +14,14 @@ from selenium.common.exceptions import TimeoutException
 
 from selenium.webdriver.chrome.options import Options
 
-GOOGLE_CHROME_PATH = '/app/.apt/usr/bin/google-chrome'
+chrome_binary = os.getenv('GOOGLE_CHROME_SHIM')
+print("ENVIRONMENT VARIABLE")
+print(chrome_binary)
+
+GOOGLE_CHROME_PATH = chrome_binary
+#'/app/.apt/usr/bin/google-chrome'
 CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
+
 
 chrome_options = Options()
 chrome_options.add_argument("--headless")
