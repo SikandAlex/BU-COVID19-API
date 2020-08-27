@@ -128,6 +128,10 @@ def update_data():
         jsonObj["data"].append(result)
         current_data = jsonObj["data"][-1]
         if current_data == result:
+            print("Current Data")
+            print(current_data)
+            print("Scraped")
+            print(result)
             print(datetime.datetime.now(tz=eastern), "No Change...")
         else:
             print(datetime.datetime.now(tz=eastern), "New Data Added...")
