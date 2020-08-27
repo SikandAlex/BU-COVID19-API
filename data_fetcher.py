@@ -10,7 +10,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
-
 from selenium.webdriver.chrome.options import Options
 
 chrome_binary = os.getenv('GOOGLE_CHROME_SHIM')
@@ -19,7 +18,7 @@ print(chrome_binary)
 
 GOOGLE_CHROME_PATH = chrome_binary
 #'/app/.apt/usr/bin/google-chrome'
-CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
+CHROMEDRIVER_PATH = os.getenv('WD_CHROMEDRIVER_PATH')
 
 
 chrome_options = Options()
