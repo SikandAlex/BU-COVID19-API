@@ -183,6 +183,54 @@
                "Processing Time":24.0
             }
          }
+      },
+      {
+        "8-27-20": {
+          "Daily": {
+            "Date": "8-27-20",
+            "Date_TS": 1598500800.0,
+            "Invalid": 13,
+            "Negative": 2990,
+            "Positive": 2,
+            "Total": 3005
+          }
+        }
+      },
+      {
+        "8-28-20": {
+          "Daily": {
+            "Date": "8-28-20",
+            "Date_TS": 1598587200.0,
+            "Invalid": 9,
+            "Negative": 1923,
+            "Positive": 2,
+            "Total": 1935
+          }
+        }
+      },
+      {
+        "8-29-20": {
+          "Cumulative": {
+            "Invalid": 234,
+            "Negative": 28126,
+            "Positive": 39,
+            "Processing Time": 24.4,
+            "Total": 28400
+          },
+          "Daily": {
+            "Date": "8-29-20",
+            "Date_TS": 1598659200.0,
+            "Date_Verbose": "Latest ResultLoadDate August 29, 2020",
+            "Invalid": 26,
+            "Isolated": 20,
+            "Negative": 2400,
+            "Non-Contagious": 1,
+            "Positive": 1,
+            "Processing Time": 30.2,
+            "Recovered": 18,
+            "Total": 2427
+          }
+        }
       }
    ]
 }
