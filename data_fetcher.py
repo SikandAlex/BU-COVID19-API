@@ -32,6 +32,7 @@ def update_data():
 
     # Current date
     current_date = driver.find_elements(By.CLASS_NAME, 'column')[-1].get_attribute('aria-label').split(" ")[1].replace(".", '')
+
     date = current_date.replace('/', '-')
     date_ts = time.mktime(datetime.datetime.strptime(date, "%m-%d-%y").timetuple())
 
@@ -74,7 +75,7 @@ def update_data():
     # Nicely formatted date for daily view
     date_data = driver.find_elements(By.CLASS_NAME, 'card')
     verbose_date = date_data[9].get_attribute("aria-label")
-    verbose_date = verbose_date.replace("Latest Result Date ", '')
+    verbose_date = verbose_date.replace("Latest ResultLoadDate ", '')
     verbose_date = verbose_date.replace(".", '')
 
     daily_tests_conducted = int(daily_tests_conducted.replace(",", ''))
