@@ -13,7 +13,7 @@ from selenium.common.exceptions import TimeoutException
 
 
 # Custom function to grab new data from Healthway dashboard
-from data_fetcher import update_data, get_ngx, get_ngx_all
+from data_fetcher import *
 
 
 from flask_cors import CORS, cross_origin
@@ -70,6 +70,10 @@ def ngx_infections():
         print(current)
         return {"data": [{"name": "Isolated", "value": current["Isolated"]}, {"name": "Non-Contagious", "value": current["Non-Contagious"]}, {"name": "Recovered", "value": current["Recovered"]}]}
 
+@app.route("/ngx-time", methods=['GET'])
+@cross_origin()
+def ngx_time():
+    return get_ngx_time()
 
 if __name__ == "__main__":
     app.run()

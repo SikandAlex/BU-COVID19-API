@@ -137,14 +137,21 @@ def update_data():
             #sendMessages()
 
 
-def get_ngx(metric="Positive"):
+def get_ngx(metric="Positive", last=5):
     output_arr = []
     with open('data.json') as json_file:
         covid_data = json.load(json_file)
+        counter = 0
         for p in covid_data['data']:
             date = list(p.keys())[0]
-            m = p[date]["Daily"][metric]
-            output_arr.append({"name": date.replace("-", "/"), "value": m})
+            daily_data = p[date]["Daily"]
+            if metric in daily_data.keys() and counter < last:
+                val = p[date]["Daily"][metric]
+                output_arr.append({"name": date.replace("-", "/"), "value": val})
+                counter+=1
+
+
+
         return {"data": output_arr}
 
 def get_ngx_all():
@@ -171,3 +178,6 @@ def get_ngx_all():
         }
     ]
     return {"data": multi}
+
+def get_ngx_time():
+    return get_ngx(metric="Processing Time")
