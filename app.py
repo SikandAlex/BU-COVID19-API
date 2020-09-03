@@ -75,5 +75,11 @@ def ngx_infections():
 def ngx_time():
     return get_ngx_time()
 
+@app.route("/ngx-pos-cum", methods=['GET'])
+@cross_origin()
+def ngx_pos_cum():
+    return get_ngx_cum(metric="Positive")
+
+
 if __name__ == "__main__":
     app.run()

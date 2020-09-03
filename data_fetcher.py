@@ -179,3 +179,14 @@ def get_ngx_all():
 
 def get_ngx_time():
     return get_ngx(metric="Processing Time")
+
+def get_ngx_cum(metric="Positive"):
+    output_arr = []
+    with open('data.json') as json_file:
+        covid_data = json.load(json_file)
+        for p in covid_data['data']:
+            date = list(p.keys())[0]
+            if "Cumulative" in p[date]:
+                val = p[date]["Cumulative"][metric]
+                output_arr.append({"name": date.replace("-", "/"), "value": val})
+        return {"data": output_arr}
