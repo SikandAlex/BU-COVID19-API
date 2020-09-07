@@ -68,7 +68,7 @@ def ngx_infections():
         key = list(jsonObj["data"][-1].keys())[0]
         current = jsonObj["data"][-1][key]["Daily"]
         print(current)
-        return {"data": [{"name": "Isolated", "value": current["Isolated"]}, {"name": "Non-Contagious", "value": current["Non-Contagious"]}, {"name": "Recovered", "value": current["Recovered"]}]}
+        return {"data": [{"name": "Isolated", "value": current["Isolated"]}, {"name": "Recovered", "value": current["Recovered"]}]}
 
 @app.route("/ngx-time", methods=['GET'])
 @cross_origin()
