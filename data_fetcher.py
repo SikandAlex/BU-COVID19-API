@@ -146,7 +146,6 @@ def get_ngx(metric="Positive"):
 def get_ngx_all():
     pos_data = get_ngx(metric="Positive")["data"]
     neg_data = get_ngx(metric="Negative")["data"]
-    inv_data = get_ngx(metric="Invalid")["data"]
     total_data = get_ngx(metric="Total")["data"]
     multi = [
         {
@@ -156,10 +155,6 @@ def get_ngx_all():
         {
           "name": "Positive",
           "series": pos_data
-        },
-        {
-          "name": "Invalid",
-          "series": inv_data
         },
         {
           "name": "Negative",
