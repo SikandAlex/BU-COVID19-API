@@ -1,1 +1,374 @@
-{"data": [{"8-15-20": {"Daily": {"Date": "8-15-20", "Date_TS": 1597464000.0, "Invalid": 17, "Negative": 1000, "Positive": 2, "Total": 1019}}}, {"8-16-20": {"Daily": {"Date": "8-16-20", "Date_TS": 1597550400.0, "Invalid": 0, "Negative": 285, "Positive": 1, "Total": 286}}}, {"8-17-20": {"Daily": {"Date": "8-17-20", "Date_TS": 1597636800.0, "Invalid": 13, "Negative": 1069, "Positive": 4, "Total": 1086}}}, {"8-18-20": {"Daily": {"Date": "8-18-20", "Date_TS": 1597723200.0, "Invalid": 11, "Negative": 950, "Positive": 4, "Total": 965}}}, {"8-19-20": {"Daily": {"Date": "8-19-20", "Date_TS": 1597809600.0, "Invalid": 7, "Negative": 1443, "Positive": 0, "Total": 1450}}}, {"8-20-20": {"Daily": {"Date": "8-20-20", "Date_TS": 1597896000.0, "Invalid": 4, "Negative": 1410, "Positive": 0, "Total": 1414}}}, {"8-21-20": {"Daily": {"Date": "8-21-20", "Date_TS": 1597968000.0, "Date_Verbose": "August 21, 2020", "Invalid": 10, "Isolated": 16, "Negative": 1443, "Non-Contagious": 1, "Positive": 3, "Processing Time": 23.1, "Recovered": 2, "Total": 1456}}}, {"8-22-20": {"Daily": {"Date": "8-22-20", "Date_TS": 1598054400.0, "Date_Verbose": "August 22, 2020", "Invalid": 9, "Isolated": 21, "Negative": 1925, "Non-Contagious": 1, "Positive": 6, "Processing Time": 18.4, "Recovered": 3, "Total": 1940}}}, {"8-23-20": {"Daily": {"Date_Verbose": "August 23, 2020", "Date_TS": 1598155200.0, "Date": "8-23-20", "Total": 1278, "Negative": 1270, "Positive": 0, "Invalid": 8, "Isolated": 19, "Recovered": 5, "Non-Contagious": 1, "Processing Time": 15.7}}}, {"8-24-20": {"Daily": {"Date_Verbose": "August 24, 2020", "Date_TS": 1598241600.0, "Date": "8-24-20", "Total": 1278, "Negative": 1270, "Positive": 0, "Invalid": 8}}}, {"8-25-20": {"Daily": {"Date_Verbose": "August 25, 2020", "Date_TS": 1598328000.0, "Date": "8-25-20", "Total": 1906, "Negative": 1891, "Positive": 4, "Invalid": 11, "Isolated": 26, "Recovered": 5, "Non-Contagious": 1, "Processing Time": 25.9}, "Cumulative": {"Total": 18301, "Negative": 18089, "Positive": 32, "Invalid": 180, "Processing Time": 23.6}}}, {"8-26-20": {"Daily": {"Date_Verbose": "August 26, 2020", "Date_TS": 1598414400.0, "Date": "8-26-20", "Total": 2732, "Negative": 2724, "Positive": 2, "Invalid": 6, "Isolated": 26, "Recovered": 7, "Non-Contagious": 1, "Processing Time": 26.8}, "Cumulative": {"Total": 21033, "Negative": 20813, "Positive": 34, "Invalid": 186, "Processing Time": 24.0}}}, {"8-27-20": {"Daily": {"Date": "8-27-20", "Date_TS": 1598500800.0, "Invalid": 13, "Negative": 2990, "Positive": 2, "Total": 3005}}}, {"8-28-20": {"Daily": {"Date": "8-28-20", "Date_TS": 1598587200.0, "Invalid": 9, "Negative": 1923, "Positive": 2, "Total": 1935}}}, {"8-29-20": {"Cumulative": {"Invalid": 234, "Negative": 28126, "Positive": 39, "Processing Time": 24.4, "Total": 28400}, "Daily": {"Date": "8-29-20", "Date_TS": 1598659200.0, "Date_Verbose": "August 29, 2020", "Invalid": 26, "Isolated": 20, "Negative": 2400, "Non-Contagious": 1, "Positive": 1, "Processing Time": 30.2, "Recovered": 18, "Total": 2427}}}, {"8-30-20": {"Daily": {"Date_Verbose": "August 30, 2020", "Date_TS": 1598760000.0, "Date": "8-30-20", "Total": 1947, "Negative": 1938, "Positive": 1, "Invalid": 8, "Isolated": 22, "Recovered": 17, "Non-Contagious": 1, "Processing Time": 31.3}, "Cumulative": {"Total": 30347, "Negative": 30064, "Positive": 40, "Invalid": 242, "Processing Time": 24.9}}}, {"9-1-20": {"Daily": {"Date_Verbose": "September 1, 2020", "Date_TS": 1598932800.0, "Date": "9-1-20", "Total": 3173, "Negative": 3159, "Positive": 3, "Invalid": 11, "Isolated": 21, "Recovered": 23, "Non-Contagious": 2, "Processing Time": 33.8}, "Cumulative": {"Total": 37080, "Negative": 36771, "Positive": 46, "Invalid": 262, "Processing Time": 26.6}}}, {"9-2-20": {"Daily": {"Date_Verbose": "September 2, 2020", "Date_TS": 1599019200.0, "Date": "9-2-20", "Total": 3930, "Negative": 3912, "Positive": 8, "Invalid": 10, "Isolated": 24, "Recovered": 27, "Non-Contagious": 2, "Processing Time": 37.6}, "Cumulative": {"Total": 41011, "Negative": 40683, "Positive": 55, "Invalid": 272, "Processing Time": 27.7}}}, {"9-5-20": {"Daily": {"Date_Verbose": "Header Cumulative Cumulative from July 27, 2020", "Date_TS": 1599278400.0, "Date": "9-5-20", "Total": 4390, "Negative": 4389, "Positive": 1, "Isolated": 23, "Recovered": 39, "Processing Time": 36.7}, "Cumulative": {"Total": 64476, "Negative": 64403, "Positive": 73, "Processing Time": 29.6}}}]}
+{
+  "data": [
+    {
+      "8-15-20": {
+        "Daily": {
+          "Date": "8-15-20",
+          "Date_TS": 1597464000,
+          "Invalid": 17,
+          "Negative": 1000,
+          "Positive": 2,
+          "Total": 1019
+        }
+      }
+    },
+    {
+      "8-16-20": {
+        "Daily": {
+          "Date": "8-16-20",
+          "Date_TS": 1597550400,
+          "Invalid": 0,
+          "Negative": 285,
+          "Positive": 1,
+          "Total": 286
+        }
+      }
+    },
+    {
+      "8-17-20": {
+        "Daily": {
+          "Date": "8-17-20",
+          "Date_TS": 1597636800,
+          "Invalid": 13,
+          "Negative": 1069,
+          "Positive": 4,
+          "Total": 1086
+        }
+      }
+    },
+    {
+      "8-18-20": {
+        "Daily": {
+          "Date": "8-18-20",
+          "Date_TS": 1597723200,
+          "Invalid": 11,
+          "Negative": 950,
+          "Positive": 4,
+          "Total": 965
+        }
+      }
+    },
+    {
+      "8-19-20": {
+        "Daily": {
+          "Date": "8-19-20",
+          "Date_TS": 1597809600,
+          "Invalid": 7,
+          "Negative": 1443,
+          "Positive": 0,
+          "Total": 1450
+        }
+      }
+    },
+    {
+      "8-20-20": {
+        "Daily": {
+          "Date": "8-20-20",
+          "Date_TS": 1597896000,
+          "Invalid": 4,
+          "Negative": 1410,
+          "Positive": 0,
+          "Total": 1414
+        }
+      }
+    },
+    {
+      "8-21-20": {
+        "Daily": {
+          "Date": "8-21-20",
+          "Date_TS": 1597968000,
+          "Date_Verbose": "August 21, 2020",
+          "Invalid": 10,
+          "Isolated": 16,
+          "Negative": 1443,
+          "Non-Contagious": 1,
+          "Positive": 3,
+          "Processing Time": 23.1,
+          "Recovered": 2,
+          "Total": 1456
+        }
+      }
+    },
+    {
+      "8-22-20": {
+        "Daily": {
+          "Date": "8-22-20",
+          "Date_TS": 1598054400,
+          "Date_Verbose": "August 22, 2020",
+          "Invalid": 9,
+          "Isolated": 21,
+          "Negative": 1925,
+          "Non-Contagious": 1,
+          "Positive": 6,
+          "Processing Time": 18.4,
+          "Recovered": 3,
+          "Total": 1940
+        }
+      }
+    },
+    {
+      "8-23-20": {
+        "Daily": {
+          "Date_Verbose": "August 23, 2020",
+          "Date_TS": 1598155200,
+          "Date": "8-23-20",
+          "Total": 1278,
+          "Negative": 1270,
+          "Positive": 0,
+          "Invalid": 8,
+          "Isolated": 19,
+          "Recovered": 5,
+          "Non-Contagious": 1,
+          "Processing Time": 15.7
+        }
+      }
+    },
+    {
+      "8-24-20": {
+        "Daily": {
+          "Date_Verbose": "August 24, 2020",
+          "Date_TS": 1598241600,
+          "Date": "8-24-20",
+          "Total": 1278,
+          "Negative": 1270,
+          "Positive": 0,
+          "Invalid": 8
+        }
+      }
+    },
+    {
+      "8-25-20": {
+        "Daily": {
+          "Date_Verbose": "August 25, 2020",
+          "Date_TS": 1598328000,
+          "Date": "8-25-20",
+          "Total": 1906,
+          "Negative": 1891,
+          "Positive": 4,
+          "Invalid": 11,
+          "Isolated": 26,
+          "Recovered": 5,
+          "Non-Contagious": 1,
+          "Processing Time": 25.9
+        },
+        "Cumulative": {
+          "Total": 18301,
+          "Negative": 18089,
+          "Positive": 32,
+          "Invalid": 180,
+          "Processing Time": 23.6
+        }
+      }
+    },
+    {
+      "8-26-20": {
+        "Daily": {
+          "Date_Verbose": "August 26, 2020",
+          "Date_TS": 1598414400,
+          "Date": "8-26-20",
+          "Total": 2732,
+          "Negative": 2724,
+          "Positive": 2,
+          "Invalid": 6,
+          "Isolated": 26,
+          "Recovered": 7,
+          "Non-Contagious": 1,
+          "Processing Time": 26.8
+        },
+        "Cumulative": {
+          "Total": 21033,
+          "Negative": 20813,
+          "Positive": 34,
+          "Invalid": 186,
+          "Processing Time": 24
+        }
+      }
+    },
+    {
+      "8-27-20": {
+        "Daily": {
+          "Date": "8-27-20",
+          "Date_TS": 1598500800,
+          "Invalid": 13,
+          "Negative": 2990,
+          "Positive": 2,
+          "Total": 3005
+        }
+      }
+    },
+    {
+      "8-28-20": {
+        "Daily": {
+          "Date": "8-28-20",
+          "Date_TS": 1598587200,
+          "Invalid": 9,
+          "Negative": 1923,
+          "Positive": 2,
+          "Total": 1935
+        }
+      }
+    },
+    {
+      "8-29-20": {
+        "Cumulative": {
+          "Invalid": 234,
+          "Negative": 28126,
+          "Positive": 39,
+          "Processing Time": 24.4,
+          "Total": 28400
+        },
+        "Daily": {
+          "Date": "8-29-20",
+          "Date_TS": 1598659200,
+          "Date_Verbose": "August 29, 2020",
+          "Invalid": 26,
+          "Isolated": 20,
+          "Negative": 2400,
+          "Non-Contagious": 1,
+          "Positive": 1,
+          "Processing Time": 30.2,
+          "Recovered": 18,
+          "Total": 2427
+        }
+      }
+    },
+    {
+      "8-30-20": {
+        "Daily": {
+          "Date_Verbose": "August 30, 2020",
+          "Date_TS": 1598760000,
+          "Date": "8-30-20",
+          "Total": 1947,
+          "Negative": 1938,
+          "Positive": 1,
+          "Invalid": 8,
+          "Isolated": 22,
+          "Recovered": 17,
+          "Non-Contagious": 1,
+          "Processing Time": 31.3
+        },
+        "Cumulative": {
+          "Total": 30347,
+          "Negative": 30064,
+          "Positive": 40,
+          "Invalid": 242,
+          "Processing Time": 24.9
+        }
+      }
+    },
+    {
+      "9-1-20": {
+        "Daily": {
+          "Date_Verbose": "September 1, 2020",
+          "Date_TS": 1598932800,
+          "Date": "9-1-20",
+          "Total": 3173,
+          "Negative": 3159,
+          "Positive": 3,
+          "Invalid": 11,
+          "Isolated": 21,
+          "Recovered": 23,
+          "Non-Contagious": 2,
+          "Processing Time": 33.8
+        },
+        "Cumulative": {
+          "Total": 37080,
+          "Negative": 36771,
+          "Positive": 46,
+          "Invalid": 262,
+          "Processing Time": 26.6
+        }
+      }
+    },
+    {
+      "9-2-20": {
+        "Daily": {
+          "Date_Verbose": "September 2, 2020",
+          "Date_TS": 1599019200,
+          "Date": "9-2-20",
+          "Total": 3930,
+          "Negative": 3912,
+          "Positive": 8,
+          "Invalid": 10,
+          "Isolated": 24,
+          "Recovered": 27,
+          "Non-Contagious": 2,
+          "Processing Time": 37.6
+        },
+        "Cumulative": {
+          "Total": 41011,
+          "Negative": 40683,
+          "Positive": 55,
+          "Invalid": 272,
+          "Processing Time": 27.7
+        }
+      }
+    },
+    {
+      "9-3-20": {
+        "Daily": {
+          "Date_Verbose": "September 3, 2020",
+          "Date_TS": 1596427200,
+          "Date": "9-3-20",
+          "Total": 2769,
+          "Negative": 2764,
+          "Positive": 5
+        }
+      }
+    },
+    {
+      "9-4-20": {
+        "Daily": {
+          "Date_Verbose": "September 4, 2020",
+          "Date_TS": 1596513600,
+          "Date": "9-4-20",
+          "Total": 5689,
+          "Negative": 5686,
+          "Positive": 3
+        }
+      }
+    },
+    {
+      "9-5-20": {
+        "Daily": {
+          "Date_Verbose": "September 5, 2020",
+          "Date_TS": 1599278400,
+          "Date": "9-5-20",
+          "Total": 4390,
+          "Negative": 4389,
+          "Positive": 1,
+          "Isolated": 23,
+          "Recovered": 39,
+          "Processing Time": 36.7
+        },
+        "Cumulative": {
+          "Total": 64476,
+          "Negative": 64403,
+          "Positive": 73,
+          "Processing Time": 29.6
+        }
+      }
+    },
+    {
+      "9-7-20": {
+        "Cumulative": {
+          "Negative": 72552,
+          "Positive": 78,
+          "Processing Time": 30.2,
+          "Total": 72630
+        },
+        "Daily": {
+          "Date": "9-7-20",
+          "Date_TS": 1599436800,
+          "Date_Verbose": "September 7, 2020",
+          "Isolated": 23,
+          "Negative": 3895,
+          "Positive": 3,
+          "Processing Time": 31.1,
+          "Recovered": 42,
+          "Total": 3898
+        }
+      }
+    }
+  ]
+}
